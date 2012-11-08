@@ -17,6 +17,12 @@ module SpreePromoVariantRule
       end
     end
 
+    initializer 'spree.promo.register.promotions.rules' do |app|
+      app.config.spree.promotions.rules = [
+        Spree::Promotion::Rules::Variant
+      ]
+    end
+
     config.to_prepare &method(:activate).to_proc
   end
 end
