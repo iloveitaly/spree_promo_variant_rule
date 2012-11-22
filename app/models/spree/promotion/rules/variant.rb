@@ -5,7 +5,7 @@ module Spree
   class Promotion
     module Rules
       class Variant < PromotionRule
-        has_and_belongs_to_many :variants, :class_name => '::Spree::Variant', :join_table => 'spree_variants_promotion_rules', :foreign_key => 'variant_rule_id'
+        has_and_belongs_to_many :variants, :class_name => '::Spree::Variant', :join_table => 'spree_variants_promotion_rules', :foreign_key => 'promotion_rule_id'
 
         MATCH_POLICIES = %w(any 1 2 3 4 5 6 7 8 9 10 all)
         preference :match_policy, :string, :default => MATCH_POLICIES.first
