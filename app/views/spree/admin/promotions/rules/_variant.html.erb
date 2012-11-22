@@ -1,6 +1,7 @@
 <div class="field alpha omega eight columns products_rule_products">
-  <%= label_tag t('variant_rule.choose_products') %>
+  <%= label_tag t('variant_rule.choose_variants') %>
   <%# product_picker_field "#{param_prefix}[product_ids_string]", promotion_rule.variant_ids_string %>
+  <%= promotion_rule.variants.map(&:name).join("<br/>").html_safe %>
 </div>
 <div class="field alpha omega eight columns">
   <label>
