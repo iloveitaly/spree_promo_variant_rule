@@ -5,3 +5,11 @@ en:
   
   variant_rule:
     choose_variants: Choose Variants
+    label: Order must contain %{select} of these variants
+    match_all: all
+    match_any: at least one
+  spree:
+    promotion_rule_types:
+      variant:
+        description: Order includes specified variant(s)
+        name: Product Variant(s)

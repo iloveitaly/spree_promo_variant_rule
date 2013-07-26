@@ -1,10 +1,9 @@
-<div class="field alpha omega eight columns products_rule_products">
-  <%= label_tag t('variant_rule.choose_variants') %>
-  <%# product_picker_field "#{param_prefix}[product_ids_string]", promotion_rule.variant_ids_string %>
-  <%= promotion_rule.variants.map(&:name).join("<br/>").html_safe %>
+<div class="field alpha omega eight columns products_rule_variants">
+  <%= label_tag "#{param_prefix}_variant_ids_string", t('variant_rule.choose_variants') %>
+  <%= hidden_field_tag "#{param_prefix}[variant_ids_string]", promotion_rule.variant_ids.join(","), :class => "variant_picker fullwidth" %>
 </div>
 <div class="field alpha omega eight columns">
   <label>
-    <%= t('variant_rule.label', :select => select_tag("#{param_prefix}[preferred_match_policy]", options_for_select(Spree::Promotion::Rules::Variant::MATCH_POLICIES.map{|s| [t("product_rule.match_#{s}"),s] }, promotion_rule.preferred_match_policy), {:class => 'select_product select2'})).html_safe %>
+    <%= t('variant_rule.label', :select => select_tag("#{param_prefix}[preferred_match_policy]", options_for_select(Spree::Promotion::Rules::Variant::MATCH_POLICIES.map{|s| [t("variant_rule.match_#{s}"),s] }, promotion_rule.preferred_match_policy), {:class => 'select_variant select2'})).html_safe %>
   </label>
 </div>
