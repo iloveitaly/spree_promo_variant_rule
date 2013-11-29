@@ -1,3 +1,7 @@
 en:
+  promotion_rule_types:
+    variant:
+      name: Variant Selector
+  
   variant_rule:
     choose_variants: Choose Variants
