@@ -18,7 +18,7 @@ p = Spree::Promotion.find(8)
 variants = [Spree::Variant.last]
 
 # assuming you only have one rule
-p.rules.first.variants
+p.rules.first.variants = variants
 ```
 
 
