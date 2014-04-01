@@ -5,6 +5,8 @@ Currently with spree core you can select products to be included in a promotion,
 
 This extension adds this functionality. However, right now there is no GUI for adding variants. You have to add them manually through the command line.
 
+Eventually I'd like to see this functionality [merged into spree core](https://github.com/spree/spree/issues/2272) but I don't have the time to create the PR right now.
+
 Adding Products on the Command Line
 -----------------------------------
 
