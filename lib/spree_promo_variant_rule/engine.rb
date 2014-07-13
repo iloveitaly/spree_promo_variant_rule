@@ -17,7 +17,7 @@ module SpreePromoVariantRule
       end
     end
 
-    initializer 'spree.promo.register.promotions.rules' do |app|
+    initializer 'spree.promo.register.promotions.rules', after: 'spree.promo.register.promotions.actions' do |app|
       app.config.spree.promotions.rules << Spree::Promotion::Rules::Variant
     end
 
