@@ -11,9 +11,9 @@ module Spree
         preference :match_policy, :string, :default => MATCH_POLICIES.first
 
         def eligible?(order, options = {})
-          return true if variants.empty?
+          return false if variants.empty?
 
-          match_count = order.variants.select { |v| variants.include? v }.size
+          match_count = order.line_items.map(&:variant).select { |v| variants.include? v }.size
 
           case preferred_match_policy
           when 'all'
